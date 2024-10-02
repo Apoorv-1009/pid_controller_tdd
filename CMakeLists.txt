@@ -90,17 +90,19 @@ endif()
 # c++ Boilerplate Modification Starts Here
 # ref: https://iamsorush.com/posts/cpp-cmake-essential/
 # ref: https://cmake.org/cmake/help/latest/guide/tutorial/index.html
-#
-add_subdirectory(libs)
-add_subdirectory(app)
+
+
+add_subdirectory(pid_controller)
 add_subdirectory(test)
 
 # create a target to build documentation
 doxygen_add_docs(docs           # target name
   # List of files or directories
-  ${PROJECT_SOURCE_DIR}/app
-  ${PROJECT_SOURCE_DIR}/libs
-  ${PROJECT_SOURCE_DIR}/include
+  # ${PROJECT_SOURCE_DIR}/app
+  # ${PROJECT_SOURCE_DIR}/libs
+  # ${PROJECT_SOURCE_DIR}/include
+  ${PROJECT_SOURCE_DIR}/test
+  ${PROJECT_SOURCE_DIR}/pid_controller
   )
 
 # create targets for building code coverage reports

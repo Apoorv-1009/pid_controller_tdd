@@ -1,6 +1,7 @@
 /**
- * @file pid_lib.hpp
+ * @file PIDController.hpp
  * @author Apoorv Thapliyal
+ *         Amogha Sunil
  * @brief C++ header file for PID controller
  * @version 0.1
  * @date 2024-10-02
@@ -10,8 +11,6 @@
  */
 
 #pragma once
-
-#include <iostream>
 
 namespace pid{
 

@@ -1,6 +1,7 @@
 /**
- * @file src.cpp
+ * @file PIDController.cpp
  * @author Apoorv Thapliyal
+ *         Amogha Sunil
  * @brief C++ source file for PID controller
  * @version 0.1
  * @date 2024-10-02
@@ -9,7 +10,7 @@
  * 
  */
 
-#include "pid_lib.hpp"
+#include "include/PIDController.hpp"
 
 /**
  * @brief Function to calculate the control input 

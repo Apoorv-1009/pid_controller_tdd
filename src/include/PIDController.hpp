@@ -37,6 +37,17 @@ class PIDController {
   /**
    * @brief Function to calculate the error
    * @return float
+   @startuml
+   * start
+   * :Input currentVelocity;
+   * :Calculate Error;
+   * :Update Integral;
+   * :Calculate Derivative;
+   * :Compute Output;
+   * :Update previousError;
+   * :Return output;
+   * end
+   * @enduml
    */
   float compute(float currentVelocity);
 

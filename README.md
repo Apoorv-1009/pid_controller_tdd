@@ -1,8 +1,12 @@
 # PID Test Driven Development
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) 
+
+
+</br>
 ENPM700: Software Development for Robotics, PID controller exercise for test driven pair programming development.
 
 Driver: Apoorv Thapliyal </br>
-Navigator: Amogha 
+Navigator: Amogha Thalihalla Sunil 
 
 ## Build Setup
 Ensure you are in the correct working directory

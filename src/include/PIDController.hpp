@@ -5,63 +5,102 @@
  * @brief C++ header file for PID controller
  * @version 0.1
  * @date 2024-10-02
- * 
+ *
  * @copyright Copyright (c) 2024
- * 
+ *
  */
+#ifndef _PIDCONTROLLER_
+#define _PIDCONTROLLER_
 
-#pragma once
-
-namespace pid{
+namespace pid {
 
 /**
  * @brief Class for PID controller
- * 
+ *
  */
-class PIDController{
-    private:
+class PIDController {
+ public:
+  /**
+   * @brief Constructor a new PIDController object
+   *
+   * @param kp: Proportional gain
+   * @param ki: Integral gain
+   * @param kd: Derivative gain
+   */
+  PIDController(float kp, float ki, float kd, float setPoint);
 
-        /**
-         * @brief PID gains
-         */
-        float kp, ki, kd;
+  /**
+   *  @brief destructor
+   */
+  ~PIDController();
 
-        /**
-         * @brief Desired velocity
-         */
-        float desired_vel;
+  /**
+   * @brief Function to calculate the error
+   * @return float
+   */
+  float compute(float currentVelocity);
 
-        /**
-         * @brief Previous error
-         */
-        float prev_error=0;
+  /**
+   * @brief Function to set Kp externally
+   */
+  void setKp(float kp);
 
-        /**
-         * @brief Integral error
-         */
-        float integral_error=0;
+  /**
+   * @brief Function to set Ki externally
+   */
+  void setKi(float ki);
 
-    public:
+  /**
+   * @brief Function to set Kd externally
+   */
+  void setKd(float kd);
 
-        /**
-         * @brief Constructor a new PIDController object
-         * 
-         * @param kp: Proportional gain
-         * @param ki: Integral gain
-         * @param kd: Derivative gain
-         */
-        PIDController(float kp=1, float ki=1, float kd=1, float setpoint=10){
-            this->kp = kp;
-            this->ki = ki;
-            this->kd = kd;
-            this->desired_vel = setpoint;
-        }
+  /**
+   * @brief Function to get Kp
+   */
+  float getKp();
 
-        /**
-         * @brief Function to calculate the error 
-         * @return float 
-         */
-        float compute(float current_vel);
+  /**
+   * @brief Function to get Ki
+   */
+  float getKi();
+
+  /**
+   * @brief Function to get Kd
+   */
+  float getKd();
+
+ private:
+  /**
+   * @brief PID gain Proportional
+   */
+  float mKp{0.0};
+
+  /**
+   * @brief PID gain integral
+   */
+  float mKi{0.0};
+
+  /**
+   * @brief PID gain derivative
+   */
+  float mKd{0.0};
+
+  /**
+   * @brief Desired velocity
+   */
+  float mSetPoint{0.0};
+
+  /**
+   * @brief Previous error
+   */
+  float mPreviousError{0.0};
+
+  /**
+   * @brief Integral
+   */
+  float mIntegral{0.0};
 };
+}  // namespace pid
 
-}
+#endif

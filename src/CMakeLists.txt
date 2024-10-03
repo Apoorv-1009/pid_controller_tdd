@@ -5,4 +5,5 @@ add_library(PIDCONTROLLER
 target_include_directories(PIDCONTROLLER PUBLIC
   # list of directories:
   .
+  include/
   )

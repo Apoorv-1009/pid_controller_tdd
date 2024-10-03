@@ -30,8 +30,20 @@ cmake --build ./build --target docs
 open ./docs/html/index.html
 ```
 
-## Test
+## Unit Tests
 ```
 # Run the unit tests
 ctest --test-dir build/
+```
+
+## Test Coverage
+```
+# Set build type to Debug and WANT_COVERAGE=ON:
+cmake -D WANT_COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -S ./ -B build/
+
+# Do a clean compile, run unit test, and generate the covereage report:
+cmake --build build/ --clean-first --target all test_coverage
+
+# Open the test coverage report:
+open build/test_coverage/index.html
 ```

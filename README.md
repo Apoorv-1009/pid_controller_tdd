@@ -1,6 +1,9 @@
 # PID Test Driven Development
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) 
 
+[![Run Unit Test and Upload Coverage Report](https://github.com/Apoorv-1009/pid_controller_tdd/actions/workflows/codecov.yml/badge.svg)](https://github.com/Apoorv-1009/pid_controller_tdd/actions/workflows/codecov.yml)
+
+[![codecov](https://codecov.io/gh/Apoorv-1009/pid_controller_tdd/graph/badge.svg?token=4JBJWIUV8D)](https://codecov.io/gh/Apoorv-1009/pid_controller_tdd)
 
 </br>
 ENPM700: Software Development for Robotics, PID controller exercise for test driven pair programming development.

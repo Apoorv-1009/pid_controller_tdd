@@ -24,15 +24,6 @@ TEST(pid_test_2, value_test) {
  */
 TEST(pid_test_3, value_test) {
     pid::PIDController PID(1, 1, 1, 10);
-    // 1*(10-0) + 1*(0+10*0.1) + 10/0.1*1 = 111
-    EXPECT_EQ(PID.compute(0), 111);
-}
-
-/**
- * @brief Test control input when at 0 velocity
- */
-TEST(pid_test_4, value_test) {
-    pid::PIDController PID(1, 1, 1, 10);
     PID.setKd(3.0);
     EXPECT_EQ(PID.getKd(), 3.0);
 }

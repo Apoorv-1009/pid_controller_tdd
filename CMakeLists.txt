@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(scratch)
+project(PID_CONTROLLER)
 
 #
 # GoogleTest Setup
@@ -92,7 +92,7 @@ endif()
 # ref: https://cmake.org/cmake/help/latest/guide/tutorial/index.html
 
 
-add_subdirectory(pid_controller)
+add_subdirectory(src)
 add_subdirectory(test)
 
 # create a target to build documentation
@@ -102,7 +102,7 @@ doxygen_add_docs(docs           # target name
   # ${PROJECT_SOURCE_DIR}/libs
   # ${PROJECT_SOURCE_DIR}/include
   ${PROJECT_SOURCE_DIR}/test
-  ${PROJECT_SOURCE_DIR}/pid_controller
+  ${PROJECT_SOURCE_DIR}/src
   )
 
 # create targets for building code coverage reports

@@ -9,8 +9,8 @@
  * @copyright Copyright (c) 2024
  *
  */
-#ifndef _PIDCONTROLLER_
-#define _PIDCONTROLLER_
+
+#pragma once
 
 namespace pid {
 
@@ -113,5 +113,3 @@ class PIDController {
   float mIntegral{0.0};
 };
 }  // namespace pid
-
-#endif

@@ -12,6 +12,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # declares a dependency on GoogleTest which is downloaded from GitHub
 include(FetchContent)
+include(FetchContent)
+if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.24.0")
+  cmake_policy(SET CMP0135 NEW)
+endif ()
+
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
@@ -94,7 +99,7 @@ endif()
 
 add_subdirectory(src)
 add_subdirectory(test)
-
+add_subdirectory(app)
 # create a target to build documentation
 doxygen_add_docs(docs           # target name
   # List of files or directories

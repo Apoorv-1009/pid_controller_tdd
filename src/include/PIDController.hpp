@@ -110,5 +110,9 @@ namespace pid {
          * @brief Integral
          */
         float mIntegral{0.0};
+        /**
+        * @brief Time Step
+        */
+        const float mTimeStep{0.01};
     };
 } // namespace pid

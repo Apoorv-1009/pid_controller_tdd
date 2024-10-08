@@ -117,6 +117,7 @@ if(WANT_COVERAGE)
       "app/main.cpp"     # Unit test does not run app, so don't analyze it
       "*gtest*"          # Don't analyze googleTest code
       "/usr/include/*"   # Don't analyze system headers
+      "/build/*"         # Don't analyze build directory
     )
 
   # code coverage for the app (shell-app):

@@ -113,6 +113,6 @@ namespace pid {
         /**
         * @brief Time Step
         */
-        const float mTimeStep{0.01};
+        const float mTimeStep{0.1};
     };
 } // namespace pid

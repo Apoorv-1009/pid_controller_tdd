@@ -13,106 +13,106 @@
 #pragma once
 
 namespace pid {
-    /**
-     * @brief Class for PID controller
-     *
-     */
-    class PIDController {
-    public:
-        /**
-         * @brief Constructor a new PIDController object
-         *
-         * @param kp: Proportional gain
-         * @param ki: Integral gain
-         * @param kd: Derivative gain
-         */
-        PIDController(float kp, float ki, float kd, float setPoint);
+/**
+ * @brief Class for PID controller
+ *
+ */
+class PIDController {
+ public:
+  /**
+   * @brief Constructor a new PIDController object
+   *
+   * @param kp: Proportional gain
+   * @param ki: Integral gain
+   * @param kd: Derivative gain
+   */
+  PIDController(float kp, float ki, float kd, float setPoint);
 
-        /**
-         *  @brief destructor
-         */
-        ~PIDController();
+  /**
+   *  @brief destructor
+   */
+  ~PIDController();
 
-        /**
-         * @brief Function to calculate the error
-         * @return float
-         @startuml
-         * start
-         * :Input currentVelocity;
-         * :Calculate Error;
-         * :Update Integral;
-         * :Calculate Derivative;
-         * :Compute Output;
-         * :Update previousError;
-         * :Return output;
-         * end
-         * @enduml
-         */
-        float compute(float currentVelocity);
+  /**
+   * @brief Function to calculate the error
+   * @return float
+   @startuml
+   * start
+   * :Input currentVelocity;
+   * :Calculate Error;
+   * :Update Integral;
+   * :Calculate Derivative;
+   * :Compute Output;
+   * :Update previousError;
+   * :Return output;
+   * end
+   * @enduml
+   */
+  float compute(float currentVelocity);
 
-        /**
-         * @brief Function to set Kp externally
-         */
-        void setKp(float kp);
+  /**
+   * @brief Function to set Kp externally
+   */
+  void setKp(float kp);
 
-        /**
-         * @brief Function to set Ki externally
-         */
-        void setKi(float ki);
+  /**
+   * @brief Function to set Ki externally
+   */
+  void setKi(float ki);
 
-        /**
-         * @brief Function to set Kd externally
-         */
-        void setKd(float kd);
+  /**
+   * @brief Function to set Kd externally
+   */
+  void setKd(float kd);
 
-        /**
-         * @brief Function to get Kp
-         */
-        float getKp() const;
+  /**
+   * @brief Function to get Kp
+   */
+  float getKp() const;
 
-        /**
-         * @brief Function to get Ki
-         */
-        float getKi() const;
+  /**
+   * @brief Function to get Ki
+   */
+  float getKi() const;
 
-        /**
-         * @brief Function to get Kd
-         */
-        float getKd();
+  /**
+   * @brief Function to get Kd
+   */
+  float getKd();
 
-    private:
-        /**
-         * @brief PID gain Proportional
-         */
-        float mKp{0.0};
+ private:
+  /**
+   * @brief PID gain Proportional
+   */
+  float mKp{0.0};
 
-        /**
-         * @brief PID gain integral
-         */
-        float mKi{0.0};
+  /**
+   * @brief PID gain integral
+   */
+  float mKi{0.0};
 
-        /**
-         * @brief PID gain derivative
-         */
-        float mKd{0.0};
+  /**
+   * @brief PID gain derivative
+   */
+  float mKd{0.0};
 
-        /**
-         * @brief Desired velocity
-         */
-        float mSetPoint{0.0};
+  /**
+   * @brief Desired velocity
+   */
+  float mSetPoint{0.0};
 
-        /**
-         * @brief Previous error
-         */
-        float mPreviousError{0.0};
+  /**
+   * @brief Previous error
+   */
+  float mPreviousError{0.0};
 
-        /**
-         * @brief Integral
-         */
-        float mIntegral{0.0};
-        /**
-        * @brief Time Step
-        */
-        const float mTimeStep{0.1};
-    };
-} // namespace pid
+  /**
+   * @brief Integral
+   */
+  float mIntegral{0.0};
+  /**
+   * @brief Time Step
+   */
+  const float mTimeStep{0.1};
+};
+}  // namespace pid

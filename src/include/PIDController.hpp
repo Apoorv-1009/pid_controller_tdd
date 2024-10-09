@@ -13,7 +13,6 @@
 #pragma once
 
 namespace pid {
-
 /**
  * @brief Class for PID controller
  *
@@ -69,12 +68,12 @@ class PIDController {
   /**
    * @brief Function to get Kp
    */
-  float getKp();
+  float getKp() const;
 
   /**
    * @brief Function to get Ki
    */
-  float getKi();
+  float getKi() const;
 
   /**
    * @brief Function to get Kd
@@ -111,5 +110,9 @@ class PIDController {
    * @brief Integral
    */
   float mIntegral{0.0};
+  /**
+   * @brief Time Step
+   */
+  const float mTimeStep{0.1};
 };
 }  // namespace pid

@@ -26,7 +26,21 @@ pid::PIDController::PIDController(float kp, float ki, float kd, float setPoint)
  * @return float
  */
 float pid::PIDController::compute(float current_vel) {
-  return 1.0;  // Dummy return
+  float error = mSetPoint - current_vel;
+
+  // Calculate the integral of the errors
+  mIntegral += error * mTimeStep;
+
+  // Calculate the derivative of the error
+  double derivative = (error - mPreviousError) / mTimeStep;
+
+  // Compute the PID control output
+  double output = mKp * error + mKi * mIntegral + mKd * derivative;
+
+  // Update the previous error
+  mPreviousError = error;
+
+  return static_cast<float>(output);
 }
 
 void pid::PIDController::setKp(float kp) { mKp = kp; }
@@ -35,10 +49,11 @@ void pid::PIDController::setKi(float ki) { mKi = ki; }
 
 void pid::PIDController::setKd(float kd) { mKd = kd; }
 
-float pid::PIDController::getKp() { return mKp; }
+float pid::PIDController::getKp() const { return mKp; }
 
-float pid::PIDController::getKi() { return mKi; }
+float pid::PIDController::getKi() const { return mKi; }
 
 float pid::PIDController::getKd() { return mKd; }
 
-pid::PIDController::~PIDController() { /*Destructor*/ }
+pid::PIDController::~PIDController() { /*Destructor*/
+}

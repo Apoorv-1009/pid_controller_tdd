@@ -1,0 +1,4 @@
+arthavg7@arthavg7:~/pid_controller_tdd$  clang-format -i --style=Google $(find . -name *.cpp -o -name *.hpp | grep -v "/build/")
+arthavg7@arthavg7:~/pid_controller_tdd$ echo $?
+0
+

@@ -55,4 +55,5 @@ float pid::PIDController::getKi() const { return mKi; }
 
 float pid::PIDController::getKd() { return mKd; }
 
-pid::PIDController::~PIDController() { /*Destructor*/ }
+pid::PIDController::~PIDController() { /*Destructor*/
+}

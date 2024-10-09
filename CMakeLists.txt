@@ -119,7 +119,7 @@ if(WANT_COVERAGE)
     #                             #   '|| true' --> continue coverage even if ctest failed
     EXECUTABLE ctest     # what to run insdie the build directory?
     EXCLUDE
-      "app/main.cpp"     # Unit test does not run app, so don't analyze it
+      "app/*"     # Unit test does not run app, so don't analyze it
       "*gtest*"          # Don't analyze googleTest code
       "/usr/include/*"   # Don't analyze system headers
       "/build/*"         # Don't analyze build directory
